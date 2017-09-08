@@ -1,0 +1,12 @@
+<h1>My todo list</h1>
+
+<div class="todo" *ngFor="let todo of todos$ | async">
+  <p>{{ todo.message }}</p>
+</div>
+
+<form (ngSubmit)="handleAddTodo(listItem.value)">
+  <label for="listItem">What is on your todo list?</label>
+  <input type="text" name="listItem" id="listItem" #listItem />
+
+  <button type="submit">Add</button>
+</form>
