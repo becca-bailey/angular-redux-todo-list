@@ -1,15 +1,15 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import * as fromRoot from '../common/index';
-import * as todoActions from '../common/todos/todos.actions';
+import * as todoActions from '../actions/todos.actions';
+import { AppState } from '../reducers/index';
 
 @Component({
   selector: 'app-add-todo',
   templateUrl: './add-todo.component.html',
-  styleUrls: ['./add-todo.component.css']
 })
 export class AddTodoComponent {
-  @Input() store: Store<fromRoot.AppState>;
+
+  constructor(private store: Store<AppState>) {}
 
   addTodo(input) {
     this.store.dispatch(new todoActions.AddTodoAction(input.value));

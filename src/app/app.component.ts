@@ -1,17 +1,22 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import * as fromRoot from './common/index';
 import { Observable } from 'rxjs/Observable';
+import { Todo } from './todos/models/todo';
+import { AppState } from './todos/reducers/index';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `
+    <h1>My todo list</h1>
+
+    <app-todo-list [todos]="todos$ | async"></app-todo-list>
+    <app-add-todo></app-add-todo>
+  `
 })
 export class AppComponent {
-  public todos$: Observable<any>;
+  public todos$: Observable<Todo[]>;
 
-  constructor(private store: Store<fromRoot.AppState>) {
-    this.todos$ = store.select(fromRoot.getTodos);
+  constructor(private store: Store<AppState>) {
+     this.todos$ = store.select('todos');
   }
 }
