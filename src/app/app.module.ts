@@ -6,10 +6,12 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { metaReducer } from './common/index';
 import { StoreModule } from '@ngrx/store';
+import { AddTodoComponent } from './add-todo/add-todo.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AddTodoComponent
   ],
   imports: [
     BrowserModule,

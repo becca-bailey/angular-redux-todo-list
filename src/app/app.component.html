@@ -4,9 +4,5 @@
   <p>{{ todo.message }}</p>
 </div>
 
-<form (ngSubmit)="handleAddTodo(listItem.value)">
-  <label for="listItem">What is on your todo list?</label>
-  <input type="text" name="listItem" id="listItem" #listItem />
+<app-add-todo [store]="store"></app-add-todo>
 
-  <button type="submit">Add</button>
-</form>
