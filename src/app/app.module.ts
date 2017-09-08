@@ -21,7 +21,7 @@ import { TodoListComponent } from './todos/todo-list/todo-list.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    StoreModule.forRoot({ reducer: metaReducer })
+    StoreModule.provideStore(metaReducer)
   ],
   providers: [],
   bootstrap: [AppComponent]
