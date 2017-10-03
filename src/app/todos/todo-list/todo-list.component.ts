@@ -3,11 +3,7 @@ import { Todo } from '../models/todo';
 
 @Component({
   selector: 'app-todo-list',
-  template: `
-    <div *ngFor="let todo of todos">
-      <app-todo [todo]="todo"></app-todo>
-    </div>
-  `
+  templateUrl: './todo-list.component.html'
 })
 export class TodoListComponent {
   @Input() todos: Todo[];

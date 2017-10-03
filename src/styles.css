@@ -3,3 +3,7 @@
 .completed {
   text-decoration: line-through;
 }
+
+app-add-todo {
+  padding: 1rem;
+}

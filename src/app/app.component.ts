@@ -6,12 +6,7 @@ import { AppState } from './todos/reducers/index';
 
 @Component({
   selector: 'app-root',
-  template: `
-    <h1>My todo list</h1>
-
-    <app-todo-list [todos]="todos$ | async"></app-todo-list>
-    <app-add-todo></app-add-todo>
-  `
+  templateUrl: './app.component.html',
 })
 export class AppComponent {
   public todos$: Observable<Todo[]>;
