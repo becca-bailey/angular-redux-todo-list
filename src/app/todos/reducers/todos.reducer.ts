@@ -3,27 +3,17 @@ import { TodoActions, TodoActionTypes } from '../actions/todos.actions';
 
 export type State = Todo[];
 
-class Counter {
-  value = 0;
-
-  incrementAndGet(): number {
-    this.value += 1;
-    return this.value;
-  }
-}
-
-const counter = new Counter();
-
 export function reducer(state = [], action: TodoActions): State {
   switch (action.type) {
     case TodoActionTypes.ADD_TODO: {
-      const message = action.payload;
+      const message = action.payload.message;
+      const id = action.payload.id;
       return [
         ...state,
         {
+          id,
           message,
           completed: false,
-          id: counter.incrementAndGet(),
         }
       ];
     }

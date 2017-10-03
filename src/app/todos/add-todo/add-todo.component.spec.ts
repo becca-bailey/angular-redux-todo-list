@@ -33,6 +33,9 @@ describe('AddTodoComponent', () => {
   it('adds a todo', () => {
     component.addTodo({ value: 'My new todo' });
 
-    expect(store.dispatch).toHaveBeenCalledWith(new AddTodoAction('My new todo'));
+    expect(store.dispatch).toHaveBeenCalledWith(new AddTodoAction({
+      message: 'My new todo',
+      id: 1,
+    }));
   });
 });

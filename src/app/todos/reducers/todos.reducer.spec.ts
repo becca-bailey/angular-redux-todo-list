@@ -6,7 +6,10 @@ describe('todos reducer', () => {
   it('adds a new todo to the state', () => {
     const initialState = [];
 
-    const updatedState = reducer(initialState, new AddTodoAction('some todo'));
+    const updatedState = reducer(initialState, new AddTodoAction({
+      message: 'some todo',
+      id: 1
+    }));
 
     expect(updatedState).not.toEqual(initialState);
 
