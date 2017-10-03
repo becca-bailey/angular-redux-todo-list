@@ -1,7 +1,8 @@
 import { Action } from '@ngrx/store';
 
 export const TodoActionTypes = {
-  ADD_TODO: '[Todos] Add todo'
+  ADD_TODO: '[Todos] Add todo',
+  TOGGLE_TODO: '[Todos] Toggle todo'
 };
 
 export class AddTodoAction implements Action {
@@ -9,4 +10,9 @@ export class AddTodoAction implements Action {
   constructor(public payload: string) {}
 }
 
-export type TodoActions = AddTodoAction;
+export class ToggleTodoAction implements Action {
+  type: string = TodoActionTypes.TOGGLE_TODO;
+  constructor(public payload: number) {}
+}
+
+export type TodoActions = AddTodoAction | ToggleTodoAction;

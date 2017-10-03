@@ -5,7 +5,7 @@ import { Todo } from '../models/todo';
   selector: 'app-todo-list',
   template: `
     <div *ngFor="let todo of todos">
-      <app-todo>{{ todo.message }}</app-todo>
+      <app-todo [todo]="todo"></app-todo>
     </div>
   `
 })

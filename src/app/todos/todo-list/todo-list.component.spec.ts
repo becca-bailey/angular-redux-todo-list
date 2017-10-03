@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TodoListComponent } from './todo-list.component';
+import { TodoComponent } from '../todo/todo.component';
+import { StoreModule } from '@ngrx/store';
+import { metaReducer } from '../reducers/index';
 
 describe('TodoListComponent', () => {
   let component: TodoListComponent;
@@ -8,7 +11,13 @@ describe('TodoListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TodoListComponent ]
+      imports: [
+        StoreModule.provideStore(metaReducer)
+      ],
+      declarations: [
+        TodoListComponent,
+        TodoComponent,
+      ],
     })
     .compileComponents();
   }));

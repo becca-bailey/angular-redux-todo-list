@@ -1,0 +1,4 @@
+<div class="todo" [class.completed]="todo.completed">
+  <input type="checkbox" (change)="onCheckboxChange()" [checked]="todo.completed"/>
+  {{ todo.message }}
+</div>

@@ -15,8 +15,5 @@ export const reducers = {
 const developmentReducer: Function = compose(storeLogger(), combineReducers)(reducers);
 
 export function metaReducer(state: AppState, action: Action) {
-  console.log('------development Reducer---------');
-  console.log(developmentReducer(state, action));
-  console.log('^^^^^^development Reducer^^^^^^^^^');
   return developmentReducer(state, action);
 }
